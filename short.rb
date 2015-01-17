@@ -4,22 +4,27 @@ require 'singleton'
 class UrlCache
   include Singleton
 
-  @links = {}
+  @links = {"aa1" => "http://google.fi"}
+  @last_hash = "aa1"
 
   def self.get_link(hash)
+    puts @links
     @links[hash]
   end
 
   def self.shorten_link(url)
-    @links[url.hash.to_s] = url
-    url.hash.to_s
+    @last_hash = @last_hash.next
+    @links[@last_hash] = url
+    @last_hash
   end
 end
 
-get '/:test' do
-  UrlCache.get_link(params[:test])
+get '/:hash' do
+  url = UrlCache.get_link(params[:hash])
+  not_found unless url
+  redirect url, 301
 end
 
-get '/shorten/:link' do
-  UrlCache.new_link(params[:link])
+post '/shorten' do
+  UrlCache.shorten_link(params[:link])
 end
