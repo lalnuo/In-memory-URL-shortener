@@ -5,7 +5,6 @@ class UrlCache
   @last_hash = "aa1"
 
   def self.get_link(hash)
-    puts @links
     @links[hash]
   end
 
