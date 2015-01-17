@@ -1,10 +1,7 @@
 require 'sinatra'
-require 'singleton'
 
 class UrlCache
-  include Singleton
-
-  @links = {"aa1" => "http://google.fi"}
+  @links = {}
   @last_hash = "aa1"
 
   def self.get_link(hash)
