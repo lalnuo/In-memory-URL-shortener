@@ -1,6 +1,8 @@
 # In-memory-URL-shortener
 Simple url shortener written in ruby &amp; sinatra. Just backend, nothing else.
 
+http://imshort.herokuapp.com/
+
 ## API
 `POST /shorten`
 
