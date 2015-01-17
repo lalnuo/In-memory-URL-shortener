@@ -1,18 +1,10 @@
 require 'sinatra'
+require './url_cache'
 
-class UrlCache
-  @links = {}
-  @last_hash = "aa1"
+set :public_folder, './public'
 
-  def self.get_link(hash)
-    @links[hash]
-  end
-
-  def self.shorten_link(url)
-    @last_hash = @last_hash.next
-    @links[@last_hash] = url
-    @last_hash
-  end
+get '/' do
+  send_file "public/index.html"
 end
 
 get '/:hash' do

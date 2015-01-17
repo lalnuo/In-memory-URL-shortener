@@ -1,0 +1,11 @@
+html {
+  background-color: #5BA889;
+  font-family: 'Helvetica';
+}
+
+pre {
+  padding: 3px;
+  background-color: gray;
+  width: auto;
+  border: 1px solid;
+}
