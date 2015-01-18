@@ -1,11 +1,28 @@
 html {
-  background-color: #5BA889;
-  font-family: 'Helvetica';
+  background-color: #E0F5F4;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+}
+
+h1, h3 {
+  width: 100%;
+  font-weight: 100;
+}
+
+h3 {
+  background-color: rgb(183, 219, 224);
+}
+
+body {
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
 }
 
 pre {
   padding: 3px;
-  background-color: gray;
+  background-color: white;
   width: auto;
   border: 1px solid;
 }
